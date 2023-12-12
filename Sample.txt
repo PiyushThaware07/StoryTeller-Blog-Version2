@@ -1,0 +1,5 @@
+1. Tailwind Sever  -> python manage.py tailwind start
+
+2. Live Server     -> python manage.py livereload
+
+3. Standard Server -> py manage.py runserver 

@@ -1,0 +1,106 @@
+{% extends "../Base.html" %}
+
+{% block body %}
+<div class="navbar md:flex flex-nowrap items-center justify-between w-full p-5 shadow-md bg-white">
+    <div class="section-1 flex flex-nowrap items-center justify-between w-full">
+        <!-- logo ----------------------------------------------------------------------- -->
+        <div class="section-logo">
+            <a href="{% url 'Index' %}" class="text-[17px] lg:text-[20px] font-bold flex flex-nowrap items-center gap-2"
+                style="font-family: 'Pacifico', cursive">
+                <i class='bx bxs-quote-left text-emerald-600'></i>
+                StoryTeller
+                <i class='bx bxs-quote-right text-emerald-600'></i>
+            </a>
+        </div>
+        <!-- menu ----------------------------------------------------------------------- -->
+        <div class="section-menu md:hidden flex flex-nowrap items-center gap-2">
+            <a href="{% url 'Upload' %}"
+                class="flex flex-nowrap items-center text-sm font-bold px-4 py-2 border-[1.4px] shadow-sm text-gray-500 rounded-full">
+                Upload<i class='bx bxs-cloud-upload text-lg font-bold'></i>
+            </a>
+            <button type="button"
+                class="h-[35px] lg:h-[40px] w-[35px] lg:w-[40px] flex flex-nowrap items-center justify-center rounded-full bg-gray-100"
+                onclick="handleMenu()">
+                <i class='bx bx-menu text-xl font-bold'></i>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- category ----------------------------------------------------------------------- -->
+    <div class="section-2 hidden md:flex flex-nowrap items-center gap-2" id="menu">
+        <div class="category-section hidden md:inline relative">
+            <button type="button"
+                class="flex flex-nowrap items-center text-sm font-bold px-5 py-3 border-[1.4px] shadow-sm text-gray-500 rounded-full"
+                onclick="handleCategory()">
+                Category<i class='bx bx-chevron-down text-lg font-bold'></i>
+            </button>
+            <div id="category"
+                class="h-auto w-auto p-1 hidden flex-nowrap flex-col border-[1.4px] shadow-sm bg-white text-gray-500 rounded-lg absolute right-2 z-[999] mt-1 text-sm font-bold">
+                {% if categorys %}
+                {% for category in categorys %}
+                <a href="#" class="h-full w-full p-5">{{category.db_name}}</a>
+                {% endfor %}
+                {% else %}
+                <button type="button" class="h-full w-full">Empty</button>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{% url 'Upload' %}"
+            class="hidden md:flex flex-nowrap items-center text-sm font-bold px-5 py-3 border-[1.4px] shadow-sm text-gray-500 rounded-full">
+            Upload<i class='bx bxs-cloud-upload text-lg font-bold'></i>
+        </a>
+        <div class="category-section flex md:hidden flex-nowrap flex-col ps-2 text-sm font-semibold text-gray-500 mb-8">
+            {% if categorys %}
+            {% for category in categorys %}
+            <a href="" class="p-4 ps-0">{{category.db_name}}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Search ----------------------------------------------------------------------- -->
+        <div class="search-section mb-3 md:mb-0">
+            <form action="">
+                <div class="h-[50px] flex flex-nowrap items-center border-[1.4px]  shadow-sm rounded-full">
+                    <input type="text" placeholder="Search"
+                        class="ps-5 flex-1 h-full border-0 rounded-s-full outline-none focus:outline-none">
+                    <button type="submit" class="px-5 rounded-e-full"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Account ----------------------------------------------------------------------- -->
+        <div class="account-section mb-3 md:mb-0">
+            <button type="button" style="font-family: 'Pacifico', cursive"
+                class="whitespace-nowrap text-sm font-bold px-5 py-3 border-2 border-black text-black rounded-full flex flex-nowrap items-center gap-2">
+                Create Account <i class='bx bxs-user text-lg'></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function handleCategory() {
+        let options = document.getElementById("category");
+        if (options.className.includes("hidden")) {
+            options.classList.remove("hidden");
+            options.classList.add("flex");
+        }
+        else {
+            options.classList.add("hidden");
+            options.classList.remove("flex");
+        }
+    }
+
+    function handleMenu() {
+        let menu = document.getElementById("menu");
+        if (menu.className.includes("hidden")) {
+            menu.classList.remove("hidden");
+        }
+        else {
+            menu.classList.add("hidden");
+        }
+    }
+</script>
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% load livereload_tags %} {% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% tailwind_css %} {% livereload_script %}
+    <title>{% block title %}{% endblock title %}</title>
+
+    <style>
+      {% block css %}{% endblock css %}
+    </style>
+
+    <!--ICON PACK-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--FONTS-->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    </style>
+  </head>
+  <body>
+    {% block body %}{% endblock body %}
+  </body>
+</html>

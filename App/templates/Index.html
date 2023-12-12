@@ -1,0 +1,10 @@
+{% extends "./Base.html" %}
+{% block title %}StoryTeller - Home{% endblock title%}
+{% block body %}
+<div class="main overflow-x-hidden" style="font-family:'Poppins', sans-serif">
+  <div class="main-navbar">{% include "./components/Navbar.html" %}</div>
+  <div class="main-header">{% include "./Header.html" %}</div>
+  <div class="main-posts">{% include "./Posts.html" %}</div>
+  <div class="main-footer">{% include "./components/Footer.html" %}</div>
+</div>
+{% endblock body %}

@@ -1,0 +1,27 @@
+{% extends "./Base.html" %}
+{% block body %}
+{% load static %}
+<div class="header w-screen">
+    <div class="section-1 w-full">
+        <div style="position: relative; overflow: hidden; max-height: 450px;">
+            <video class="w-full h-full object-cover" playsinline autoplay muted loop>
+                <source src="{% static 'videos/video4.mp4' %}" type="video/mp4">
+            </video>
+            <div class="content absolute top-0 left-0 h-full w-full flex flex-nowrap items-center justify-center">
+                <h1 class="text-[25px] sm:text-[3.6rem] md:text-[4rem] lg:text-[5rem] font-bold text-white capitalize">
+                    Publish Your <span class="auto-type"></span>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(".auto-type",{
+        strings:["Passion","Stories","Content"],
+        typeSpeed:150,
+        backSpeed:150,
+        loop:true
+    })
+</script>
+{% endblock body %}
