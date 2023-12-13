@@ -14,7 +14,7 @@
         </div>
         <!-- menu ----------------------------------------------------------------------- -->
         <div class="section-menu md:hidden flex flex-nowrap items-center gap-2">
-            <a href="{% url 'Upload' %}"
+            <a href=""
                 class="flex flex-nowrap items-center text-sm font-bold px-4 py-2 border-[1.4px] shadow-sm text-gray-500 rounded-full">
                 Upload<i class='bx bxs-cloud-upload text-lg font-bold'></i>
             </a>
@@ -35,18 +35,22 @@
                 onclick="handleCategory()">
                 Category<i class='bx bx-chevron-down text-lg font-bold'></i>
             </button>
-            <div id="category"
-                class="h-auto w-auto p-1 hidden flex-nowrap flex-col border-[1.4px] shadow-sm bg-white text-gray-500 rounded-lg absolute right-2 z-[999] mt-1 text-sm font-bold">
+            <ul id="category"
+                class="h-auto min-w-[200px] w-auto p-1 hidden flex-nowrap flex-col border-[1.4px] shadow-sm bg-white text-gray-500 rounded-lg absolute right-2 z-[999] mt-1 text-sm font-bold">
                 {% if categorys %}
                 {% for category in categorys %}
-                <a href="#" class="h-full w-full p-5">{{category.db_name}}</a>
+                <li class="w-full p-3">
+                    <a href="{% url 'Category' category.db_id %}" class="h-full w-full">{{category.db_name}}</a>
+                </li>
                 {% endfor %}
                 {% else %}
-                <button type="button" class="h-full w-full">Empty</button>
+                <li class="w-full p-3">
+                    <h1 type="button" class="h-full w-full">Empty</h1>
+                </li>
                 {% endif %}
-            </div>
+            </ul>
         </div>
-        <a href="{% url 'Upload' %}"
+        <a href=""
             class="hidden md:flex flex-nowrap items-center text-sm font-bold px-5 py-3 border-[1.4px] shadow-sm text-gray-500 rounded-full">
             Upload<i class='bx bxs-cloud-upload text-lg font-bold'></i>
         </a>

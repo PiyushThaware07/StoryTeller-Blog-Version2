@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 
 # Import Models
 from .models import *
@@ -9,20 +9,15 @@ def index(request):
     categorys = Category.objects.all()
     return render(request, "Index.html", locals())
 
-
-def upload(request):
+def category(request,category_id):
     categorys = Category.objects.all()
+    # Category Banner ------------------
+    filter_category = get_object_or_404(Category, db_id=category_id)
+    # Category Posts
+    category_posts = Post.objects.filter(db_category=filter_category)
+    print("Posts ----->> ",category_posts)
+    return render(request,"Index.html",locals())
 
-    if request.method == "POST":
-        upload_title = request.POST.get("upload_title")
-        upload_description = request.POST.get("upload_description")
-        upload_category = request.POST.get("upload_category")
-        # Handle Category -----------------------------------------------
-        category_instance = Category.objects.get(db_name=upload_category)
-        create_post = Post(
-            db_title=upload_title,
-            db_description=upload_description,
-            db_category=category_instance
-        )
-        create_post.save()
-    return render(request, "Upload.html", locals())
+
+def post(request,post_id):
+    return render(request,"Index.html",locals())

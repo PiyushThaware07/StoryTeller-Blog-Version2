@@ -1,0 +1,60 @@
+{% extends "./Base.html" %}
+{% block title %}Categorys{% endblock title%}
+{% block body %}
+<div class="category-section">
+    {% if filter_category %}
+    <div class="h-[200px] w-full bg-gray-400"
+        style="background-image: url('{{ filter_category.db_thumbnail.url }}');background-repeat: no-repeat;background-position: center;background-size: cover;background-attachment: fixed;">
+        <div class="h-full w-full flex flex-nowrap items-center md:justify-start ps-10">
+            <h1 class=" text-5xl md:text-6xl font-bold"
+                style="-webkit-text-fill-color: transparent;text-fill-color: transparent;-webkit-text-stroke: 2px #fff;text-stroke: 2px #fff;">
+                {{filter_category.db_name}}
+            </h1>
+        </div>
+    </div>
+    {% endif %}
+
+
+
+    <div class="content py-5 sm:p-5 md:p-10">
+        <div class="row">
+            {% if category_posts %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center md:gap-8">
+                {% for post in category_posts %}
+                <div class="col w-full min-h-[300px] md:h-auto  p-5">
+                    <div class="thumbnail min-h-[150px] sm:h-[180px] w-full rounded-xl bg-gray-200"
+                        style="background-image: url('{{ post.db_thumbnail.url}}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+                    </div>
+                    <div class="px-3 text-gray-700">
+                        <h1 class="text-[13px] font-bold flex flex-nowrap items-center mt-2">Blogging ,
+                            {{post.db_category.db_name}} - {{post.db_publish}}<i
+                                class='bx bxs-purchase-tag text-md text-red-600'></i></h1>
+                        <h1 class="text-[21px] font-bold">{{post.db_title|truncatechars:50}}</h1>
+                        <p class="text-[12px] font-semibold mt-2">{{post.db_description|truncatechars:100}}</p>
+                        <div class="row flex flex-nowrap items-center gap-3">
+                            <a href="{% url 'Post' post.db_id %}"
+                                class="text-sm font-bold px-6 py-2 my-2 rounded-full  border-2 border-gray-500 cursor-pointer">
+                                Read Blog
+                            </a>
+                            <button
+                                class="h-[40px] w-[40px] bg-white  border-2 border-gray-500 rounded-full flex flex-nowrap items-center justify-center">
+                                <i class='bx bxs-heart text-xl text-pink-600'></i>
+                            </button>
+                            <button
+                                class="h-[40px] w-[40px] bg-white  border-2 border-gray-500 rounded-full flex flex-nowrap items-center justify-center">
+                                <i class='bx bxs-paper-plane text-xl text-blue-600'></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="h-[100px] w-full flex flex-nowrap items-center justify-center">
+                <h1 class="text-md font-semibold">No Posts</h1>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

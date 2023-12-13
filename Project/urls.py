@@ -27,7 +27,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="Index"),
-    path('upload',views.upload,name="Upload"),
+    path('post/<int:post_id>/', views.post, name="Post"),
+    path('category/<int:category_id>/', views.category, name="Category"),
 
     path("__reload__/", include("django_browser_reload.urls")),
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
