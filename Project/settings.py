@@ -38,24 +38,30 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    
     # LIVE SERVER
     # 'livereload',
 
+
     # TAILWIND CSS
-    'tailwind',
-    'theme',
+    # 'tailwind',
+    # 'theme',
+
+
     # 'django_browser_reload',
 
     # APPS - SETUP
     'App',
 ]
 
+''' 
 # TAILWIND CSS
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
 NPM_BIN_PATH = "E:/APPS/Node Js/npm.cmd"
+'''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,8 +72,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    
     # TAILWIND CSS
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 
     # Live Server Setup
     # 'livereload.middleware.LiveReloadScript',
