@@ -1,12 +1,24 @@
-{% extends "./Base.html" %}
-{% block body %}
-{% load static %}
+{% extends "./Base.html" %} {% block body %} {% load static %}
 <div class="header w-screen">
     <div class="section-1 w-full">
-        <div style="position: relative; overflow: hidden; max-height: 450px;">
+        <div style="position: relative; overflow: hidden; max-height: 450px">
+            {% comment %}
             <video class="w-full h-full object-cover" playsinline autoplay muted loop>
-                <source src="{% static 'videos/video4.mp4' %}" type="video/mp4">
+                <source src="{% static 'videos/video4.mp4' %}" type="video/mp4" />
             </video>
+            {% endcomment %}
+
+
+            <div style="position:relative;padding-top:56.25%;">
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    src="https://player.vimeo.com/video/384761655?title=0&portrait=0&byline=0&autoplay=1&loop=1&muted=true&controls=0"
+                    frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+
+
+
+
             <div class="content absolute top-0 left-0 h-full w-full flex flex-nowrap items-center justify-center">
                 <h1 class="text-[25px] sm:text-[3.6rem] md:text-[4rem] lg:text-[5rem] font-bold text-white capitalize">
                     Publish Your <span class="auto-type"></span>
@@ -17,11 +29,11 @@
 </div>
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
-    var typed = new Typed(".auto-type",{
-        strings:["Passion","Stories","Content"],
-        typeSpeed:150,
-        backSpeed:150,
-        loop:true
-    })
+    var typed = new Typed(".auto-type", {
+        strings: ["Passion", "Stories", "Content"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true,
+    });
 </script>
 {% endblock body %}
