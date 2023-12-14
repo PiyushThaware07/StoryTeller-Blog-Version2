@@ -932,10 +932,6 @@ select {
   height: 35px;
 }
 
-.h-\[370px\] {
-  height: 370px;
-}
-
 .h-\[40px\] {
   height: 40px;
 }
@@ -964,12 +960,12 @@ select {
   min-height: 150px;
 }
 
-.min-h-\[400px\] {
-  min-height: 400px;
-}
-
 .min-h-\[300px\] {
   min-height: 300px;
+}
+
+.min-h-\[400px\] {
+  min-height: 400px;
 }
 
 .w-\[35px\] {
@@ -1044,10 +1040,6 @@ select {
   align-items: center;
 }
 
-.justify-start {
-  justify-content: flex-start;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -1066,14 +1058,6 @@ select {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
 }
 
 .overflow-x-hidden {
@@ -1170,6 +1154,11 @@ select {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -1185,9 +1174,14 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gray-400 {
+.bg-gray-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1266,42 +1260,6 @@ select {
   padding-inline-start: 1.25rem;
 }
 
-.pt-\[1000px\] {
-  padding-top: 1000px;
-}
-
-.pt-\[100px\] {
-  padding-top: 100px;
-}
-
-.pt-\[80px\] {
-  padding-top: 80px;
-}
-
-.pt-\[px\] {
-  padding-top: px;
-}
-
-.pt-\[87px\] {
-  padding-top: 87px;
-}
-
-.pt-\[87x\] {
-  padding-top: 87x;
-}
-
-.pt-\[91px\] {
-  padding-top: 91px;
-}
-
-.pt-\[\] {
-  padding-top: ;
-}
-
-.pt-\[177px\] {
-  padding-top: 177px;
-}
-
 .pt-\[77px\] {
   padding-top: 77px;
 }
@@ -1324,11 +1282,6 @@ select {
   line-height: 1;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
@@ -1336,6 +1289,10 @@ select {
 
 .text-\[12\.5px\] {
   font-size: 12.5px;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
 }
 
 .text-\[13px\] {
@@ -1367,14 +1324,6 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[1px\] {
-  font-size: 1px;
-}
-
-.text-\[12px\] {
-  font-size: 12px;
 }
 
 .font-bold {
@@ -1507,20 +1456,11 @@ select {
   .sm\:text-\[3\.6rem\] {
     font-size: 3.6rem;
   }
-
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
 }
 
 @media (min-width: 768px) {
   .md\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .md\:mb-5 {
-    margin-bottom: 1.25rem;
   }
 
   .md\:ms-3 {
@@ -1571,21 +1511,17 @@ select {
     padding-inline-start: 0px;
   }
 
-  .md\:pt-\[91px\] {
-    padding-top: 91px;
-  }
-
   .md\:pt-\[90px\] {
     padding-top: 90px;
-  }
-
-  .md\:text-\[4rem\] {
-    font-size: 4rem;
   }
 
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .md\:text-\[4rem\] {
+    font-size: 4rem;
   }
 }
 
