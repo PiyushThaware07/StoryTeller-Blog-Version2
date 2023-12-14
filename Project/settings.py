@@ -39,12 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # LIVE SERVER
-    'livereload',
+    # 'livereload',
 
     # TAILWIND CSS
     'tailwind',
     'theme',
-    'django_browser_reload',
+    # 'django_browser_reload',
 
     # APPS - SETUP
     'App',
@@ -70,7 +70,7 @@ MIDDLEWARE = [
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 
     # Live Server Setup
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'Project.urls'

@@ -1,10 +1,12 @@
-{% load livereload_tags %} {% load static tailwind_tags %}
+{% comment %} {% load livereload_tags %} {% endcomment %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% tailwind_css %} {% livereload_script %}
+    {% tailwind_css %}
+    {% comment %} {% livereload_script %} {% endcomment %}
     <title>{% block title %}{% endblock title %}</title>
 
     <style>
